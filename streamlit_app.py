@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide",
 )
 
-API_URL = "https://car-prediction-lpfl.onrender.com/predict"
+API_URL = "https://car-price-prediction-lsgu.onrender.com/predict"
 
 # -------------------- CUSTOM CSS --------------------
 st.markdown("""
