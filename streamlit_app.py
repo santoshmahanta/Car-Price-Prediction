@@ -5,7 +5,7 @@ st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="
 
 API_URL = (
     "https://car-price-prediction-lsgu.onrender.com/predict"
-    or "http://127.0.0.1:8000/predict"
+    
 )  # change if your endpoint differs
 
 st.title("🚗 Car Price Prediction")
@@ -58,8 +58,11 @@ if st.button("Predict Price 💰"):
 
             # adjust keys based on your API response
             # common patterns: {"prediction": 3.45} or {"predicted_price": 3.45}
-            pred = data.get("prediction", data.get("predicted_price", None))
-
+            pred = (
+    data.get("prediction_price")
+    or data.get("prediction")
+    or data.get("predicted_price")
+)
             if pred is None:
                 st.warning(
                     "API responded but prediction key not found. Full response below:"
